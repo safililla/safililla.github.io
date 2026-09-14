@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lilla Sáfi</title>
+<style>
+  :root {
+    --paper: #F5F3EE;
+    --ink: #16232B;
+    --muted: #5C6670;
+    --rule: #DBD6CB;
+    --gold: #A97A2E;
+    --sans: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+    --serif: 'Iowan Old Style', 'Palatino Linotype', Georgia, serif;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--serif);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .layout {
+    max-width: 980px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 260px 1px 1fr;
+    gap: 0 3rem;
+    min-height: 100vh;
+  }
+
+  .rule-col { background: var(--rule); }
+
+  aside {
+    padding: 4.5rem 1.5rem 3rem 1.5rem;
+    position: sticky;
+    top: 0;
+    align-self: start;
+  }
+
+  .portrait {
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+    margin-bottom: 1.25rem;
+    display: block;
+    object-fit: cover;
+  }
+
+  h1 {
+    font-family: var(--sans);
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    margin: 0 0 0.4rem;
+  }
+
+  .affiliation {
+    font-family: var(--sans);
+    font-size: 0.88rem;
+    color: var(--muted);
+    margin: 0 0 1.75rem;
+    line-height: 1.45;
+  }
+
+  nav {
+    font-family: var(--sans);
+    font-size: 0.85rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+  }
+
+  nav a {
+    color: var(--ink);
+    text-decoration: none;
+    position: relative;
+    width: fit-content;
+  }
+
+  nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 1px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.18s ease;
+  }
+
+  nav a:hover::after, nav a:focus-visible::after {
+    transform: scaleX(1);
+  }
+
+  main {
+    padding: 4.5rem 1.5rem 4rem 0;
+  }
+
+  section {
+    margin-bottom: 3rem;
+    scroll-margin-top: 2rem;
+  }
+
+  .marker {
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    background: var(--gold);
+    margin-right: 0.55rem;
+    vertical-align: middle;
+  }
+
+  h2 {
+    font-family: var(--sans);
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin: 0 0 1.1rem;
+    display: flex;
+    align-items: center;
+  }
+
+  p {
+    margin: 0 0 1rem;
+    font-size: 1.03rem;
+    max-width: 56ch;
+  }
+
+  .pub {
+    padding-bottom: 1.5rem;
+  }
+
+  .pub .title {
+    font-style: italic;
+    font-size: 1.03rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .pub .venue {
+    font-family: var(--sans);
+    color: var(--muted);
+    font-size: 0.85rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .pub .pub-links {
+    font-family: var(--sans);
+    font-size: 0.8rem;
+  }
+
+  .pub .pub-links a {
+    color: var(--gold);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+  }
+
+  .pub .pub-links a:hover {
+    border-bottom-color: var(--gold);
+  }
+
+  .placeholder {
+    background: #EFE4D3;
+    color: #8A5A2E;
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    padding: 0.1rem 0.4rem;
+    border-radius: 3px;
+  }
+
+  footer {
+    font-family: var(--sans);
+    font-size: 0.78rem;
+    color: var(--muted);
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--rule);
+  }
+
+  @media (max-width: 720px) {
+    .layout {
+      grid-template-columns: 1fr;
+    }
+    .rule-col { display: none; }
+    aside {
+      position: static;
+      padding: 2.5rem 1.25rem 1.5rem;
+      border-bottom: 1px solid var(--rule);
+    }
+    nav { flex-direction: row; flex-wrap: wrap; gap: 1rem; }
+    main { padding: 2.5rem 1.25rem 3rem; }
+  }
+</style>
+</head>
+<body>
+<div class="layout">
+
+  <aside>
+    <img class="portrait" src="images/portrait.jpg" alt="Lilla Sáfi">
+    <h1>Lilla Sáfi</h1>
+    <p class="affiliation">PhD Student in Finance<br>Bocconi University</p>
+    <nav>
+      <a href="mailto:lilla.safi@phd.unibocconi.it">Email</a>
+      <a href="files/cv.pdf">CV</a>
+      <a href="#">Google Scholar</a>
+      <a href="https://www.linkedin.com/in/lilla-safi/">LinkedIn</a>
+    </nav>
+  </aside>
+
+  <div class="rule-col"></div>
+
+  <main>
+    <section>
+      <h2><span class="marker"></span>Research Interests</h2>
+      <p>Banking and Financial Intermediation, Financial Stability, Bank Regulation, Liquidity Risk, Credit Risk</p>
+    </section>
+
+    <section>
+      <h2><span class="marker"></span>Publications</h2>
+      <div class="pub">
+        <p class="title">Analysis of the Liquidity Situation of the U.S. Banking System in Light of the 2023 Bank Failures</p>
+        <p class="venue">Sáfi, L. T., &amp; Kürthy, G. (2024). Public Finance Quarterly, 70(4), 79–97.</p>
+        <p class="pub-links"><a href="https://doi.org/10.35551/PFQ_2024_4_3">DOI</a></p>
+      </div>
+    </section>
+
+    <footer>Milan, Italy</footer>
+  </main>
+
+</div>
+</body>
+</html>
